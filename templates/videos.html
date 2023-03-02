@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> Youtube Video Details </title>
+        <style>
+            .content{
+               height : 20px;
+               width : 2500px; 
+               font-size : 20px; 
+               
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style=color:red;text-align:center> Top 50 Trending Youtube Vidoes </h2>
+        <div class ="content">
+        {% for row in row_videoinfo %}
+        <p style=color:blue;border-style:groove;border-color:pink> <b style = color:black> ID:<a href={{ url_for('statistics',id= row['id'])}}>{{row["id"]}}</a></b> |
+            <b style = color:black> Video ID </b> {{row["video_id"]}} |
+           <b style = color:black> Video Title </b> {{row["title"]}}  |
+            <b style = color:black> Channel Title </b>{{row["channel_title"]}}| 
+           <b style = color:black> Views </b>{{row["views"]}} 
+        </p>
+        {% endfor %}
+        </div>
+    </body>
+</html>

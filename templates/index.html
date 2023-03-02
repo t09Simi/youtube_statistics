@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> Trending Youtube Video Statistics and Comments </title>
+        <style>
+            .content{
+               height : 50px;
+               width : 1200px; 
+               font-size : 20px; 
+               
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style=color:red> Trending Youtube Video Statistics and Comments </h2>
+        <div class = "content">
+        <p> Welcome to this page here you will find information about the videos that are trending in Youtube </p>
+        <p><a href ={{ url_for('videos')}}> Video Information </a></p>
+        <p> Click here to see the details of 10 most liked videos in Youtube</p>
+        <p> <a href ={{ url_for('likes')}}> Most Liked Videos </a></p>
+        </div>
+    </body>
+</html>

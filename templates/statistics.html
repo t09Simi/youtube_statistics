@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> Statistics </title>
+        <style>
+            .content{
+               
+            }
+            p.solid{
+               height : 20px;
+               width : 250px; 
+               font-size : 20px; 
+               color: green
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h2 style= color:red> Video Statistics </h2>
+        
+        {% for row in row_stats %}
+        
+        <p class ="solid"> <b style=color:blue>Category ID - </b> 
+            {{row["category_id"]}} 
+            <br>
+         <b style=color:blue> Comments - </b> 
+            {{row["comments_total"]}} 
+            </br>
+         <b style=color:blue> Likes - </b> 
+            {{row["likes"]}} 
+            <br>
+         <b style=color:blue> Dislikes - </b> 
+            {{row["dislikes"]}} 
+            </br>
+         <b style=color:blue> Date published - </b> 
+            {{row["date"]}} </p>
+         
+        {% endfor %}
+        
+    </body>
+</html>

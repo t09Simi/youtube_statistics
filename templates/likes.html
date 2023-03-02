@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title> Most likes </title>
+    </head>
+    <body>
+        <h2 style= color:red>10 Most Liked Videos in Youtube </h2>
+        {% for row in likes %}
+        <p style = background-color:yellow><b style =color:brown>Video Name - </b><i>{{row["title"]}}</i></p>
+        <p><b style =color:brown>Views on the video - </b>{{row["views"]}}</p>
+        <p><b style =color:brown>Total Likes - </b>{{row["likes"]}}</p>
+        <br> </br>
+        {% endfor %}
+    </body>
+</html>
