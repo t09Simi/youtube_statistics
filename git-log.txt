@@ -1,0 +1,8 @@
+* e68bb2a : Provided render details in Readme
+* a2814c7 : Changed the view of html pages
+* 5d745c0 : Added requirements.txt
+* 9f6aef2 : Created README file for the project
+* de2fe51 : Error handling in files
+* 188fcce : Made changes in html page
+* 87dd034 : csv files added
+* 163268e : Initial commit
