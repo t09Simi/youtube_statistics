@@ -28,6 +28,21 @@ We will create a templates folder and keep all our html pages in that file. The 
 
 In 'videos.html' you will see the list of Top 50 trending videos based on the views and by clicking each of their IDs you will see the statistics associated with that video such as likes, dislikes, comments and date published which is from  the 'statistics.html' file.
 
+In 'likes.html' you will see the Top 10 videos which has got the most likes on YouTube. For this I have used JOIN on two tables by ordering it descending and limiting the likes to ten.
+
+    #@app.route('/likes')
+    def likes():
+         conn = sqlite3.connect(database_name)
+         conn.row_factory = sqlite3.Row
+         query = """
+         SELECT details.title, details.views, statistics.likes
+         FROM details
+        JOIN statistics ON details.id = statistics.details_id
+        ORDER BY statistics.likes DESC LIMIT 10
+        """
+        cur = conn.cursor()
+        cur.execute(query)
+
 The logic of the application is written in 'video_statistics.py' file. This file will render the html page using the @route method and execute the sql command for that web page.
 
     import sqlite3
@@ -50,8 +65,27 @@ The logic of the application is written in 'video_statistics.py' file. This file
         conn.close()
         return render_template('videos.html',row_videoinfo=row_videoinfo)
 
-##### Using Render for deployment 
 
+##### Implementation 
+
+Load the application using these commands and test it locally. 
+
+    export FLASK_APP=video_statistics.py
+    export FLASK_ENV=developoment
+    python3 -m flask run 
+
+Don't forget to push the files to your Git repository.
+
+    git add .                               #Adds all the files into your repositories
+    git commit -m 'provide your comment'    # commits file into git
+    git push origin main                    # push files into the branch name
+##### Using Render for deployment 
+Render is an open source cloud hosting platform to build applications and auto deploy repositories from Git. Know more on creating your account and deploying the code read this https://render.com/docs/web-services
+Prerequisites for render is that you have to install gunicorn and create requirements.txt file in your project.
+
+    pip install gunicorn
+    pip freeze > requirements.txt
+Render link of my application: https://videos-j9jp.onrender.com/
          
 
 
