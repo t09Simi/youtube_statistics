@@ -3,38 +3,30 @@
         <title> Statistics </title>
         <style>
             .content{
-               
+               padding:20px;
+               font-size:20px;
+               background-color:linen;
+               color:lightcoral;
+               text-align:center;
             }
-            p.solid{
-               height : 20px;
-               width : 250px; 
-               font-size : 20px; 
-               color: green
-            }
+            
         </style>
     </head>
     <body>
-        
-        <h2 style= color:red> Video Statistics </h2>
-        
-        {% for row in row_stats %}
-        
-        <p class ="solid"> <b style=color:blue>Category ID - </b> 
-            {{row["category_id"]}} 
-            <br>
-         <b style=color:blue> Comments - </b> 
-            {{row["comments_total"]}} 
-            </br>
-         <b style=color:blue> Likes - </b> 
-            {{row["likes"]}} 
-            <br>
-         <b style=color:blue> Dislikes - </b> 
-            {{row["dislikes"]}} 
-            </br>
-         <b style=color:blue> Date published - </b> 
-            {{row["date"]}} </p>
+        <div class ="content">
+            <p> <b>You can see the details associated with the video here</b></p>
+                {% for row in row_stats %}
+                    <p> <b style=color:indianred>Category ID - </b>  {{row["category_id"]}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style=color:indianred> Comments - </b> 
+                    {{row["comments_total"]}} </p>
+                    <p>  
+                    <b style=color:indianred> Likes - </b> 
+                     {{row["likes"]}} 
+                    </p>
+                    <p><b style=color:indianred> Dislikes - </b> {{row["dislikes"]}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b style=color:indianred> Date published - </b> 
+                    {{row["date"]}} </p>
          
-        {% endfor %}
-        
+                {% endfor %}
+        </div> 
     </body>
 </html>
